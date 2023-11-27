@@ -1,0 +1,42 @@
+.homepage-logo-container {
+	display: grid;
+	place-items: center;
+	--border-radius: 30px;
+	height: 300px;
+}
+.homepage-logo-container .background-logo {
+	grid-area: 1/1;
+	filter: blur(20px);
+	border-radius: var(--border-radius);
+}
+.homepage-logo-container .foreground-logo {
+	transform: scale(80%);
+	grid-area: 1/1;
+	border-radius: var(--border-radius);
+}
+
+.homepage-title {
+	text-align: center;
+}
+
+.homepage-gotostore-btn {
+	outline: 0.5px solid blue;
+	border-radius: 2ch;
+	background-color: rgba(0, 0, 255, 0.15);
+	color: rgb(34 34 43);
+	display: block;
+	margin-inline: auto;
+}
+.homepage-gotostore-btn > a {
+	color: inherit;
+	display: flex;
+	align-items: center;
+	column-gap: 0.25em;
+	font-size: 1.1rem;
+	text-decoration: none;
+}
+.homepage-gotostore-btn .cart-icon {
+	color: inherit;
+	font-size: inherit;
+	width: 3ch;
+}

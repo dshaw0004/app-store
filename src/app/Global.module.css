@@ -1,0 +1,9 @@
+.btn {
+	padding: 0.25em 0.5em;
+	border: 2px solid currentColor;
+
+	border-radius: 01em;
+
+	color: yellow;
+	background-color: blue;
+}
