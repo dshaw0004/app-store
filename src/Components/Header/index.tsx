@@ -6,9 +6,11 @@ interface Props {
 	title?: string;
 }
 
-export default function index({ title = "App Bucket" }: Props) {
+const Header: React.FunctionComponent<{
+	title?: string;
+}> = ({ title = "App Bucket" }: Props) => {
 	const navUlRef = useRef<HTMLUListElement>(null);
-	function toggleNavbar(event: HTMLButtonElement) {
+	function toggleNavbar() {
 		if (navUlRef.current?.classList.contains("visible")) {
 			navUlRef.current.classList.remove("visible");
 		} else {
@@ -25,7 +27,7 @@ export default function index({ title = "App Bucket" }: Props) {
 					<button
 						aria-hidden
 						className="small-screen-only"
-						onClick={(e) => toggleNavbar(e)}
+						onClick={toggleNavbar}
 					>
 						<b>=</b>
 					</button>
@@ -47,7 +49,7 @@ export default function index({ title = "App Bucket" }: Props) {
 							<button
 								aria-hidden
 								className="small-screen-only close-nav"
-								onClick={(e) => toggleNavbar(e)}
+								onClick={toggleNavbar}
 							>
 								close
 							</button>
@@ -57,4 +59,6 @@ export default function index({ title = "App Bucket" }: Props) {
 			</header>
 		</>
 	);
-}
+};
+
+export default Header;
