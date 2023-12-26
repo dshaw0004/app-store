@@ -17,7 +17,7 @@ export default function Card({ title, url, platfrom }: props) {
 			</div>
 			<div className={stl.cardUpper}>
 				<Image
-					src="./next.svg"
+					src="/appbucket.png"
 					alt={`${title} app logo`}
 					width={100}
 					height={100}

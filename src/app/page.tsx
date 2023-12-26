@@ -1,6 +1,5 @@
 import "@/CSS/home.css";
 import Image from "next/image";
-
 import Header from "@/Components/Header";
 
 function CartIcon() {
@@ -40,11 +39,11 @@ function CartIcon() {
 export default function Home() {
 	return (
 		<>
-			<Header title="App Bank" />
+			<Header title="App Bucket" />
 			<main>
 				<div className="homepage-logo-container">
 					<Image
-						src={"./next.svg"}
+						src={"/appbucket.png"}
 						aria-hidden="true"
 						alt="back for the logo"
 						className="background-logo"
@@ -52,14 +51,14 @@ export default function Home() {
 						height={250}
 					/>
 					<Image
-						src={"./next.svg"}
+						src={"/appbucket.png"}
 						className="foreground-logo"
 						alt="foreground of the logo"
 						width={250}
 						height={250}
 					/>
 				</div>
-				<h1 className="homepage-title text-6xl my-4">App Store</h1>
+				<h1 className="homepage-title text-6xl my-4">App Bucket</h1>
 				<p className="text-center my-3">
 					Here you will get some specific use case apps.
 				</p>
