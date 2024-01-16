@@ -1,7 +1,14 @@
+"use client";
 import Card from "@/Components/Card";
 import Header from "@/Components/Header";
-
+import { useEffect, useState } from "react";
 import stl from "./index.module.css";
+
+interface data {
+	appURL: string;
+	description: string;
+	name: string;
+}
 
 export default function Store() {
 	return (

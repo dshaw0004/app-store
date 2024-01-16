@@ -87,4 +87,6 @@ header {
 .nav-list .nav-item:hover:not(:empty, :has(.close-nav)) {
 	background-color: rgba(225, 200, 175, 0.25);
 	border-radius: 1em;
+
+	text-decoration: underline;
 }

@@ -19,7 +19,7 @@ const Header: React.FunctionComponent<{
 	}
 	return (
 		<>
-			<header className="flex justify-between px-4 py-2 align-center">
+			<header className="">
 				<a href="/" className="">
 					{title}
 				</a>
