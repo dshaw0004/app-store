@@ -12,17 +12,17 @@ export default function About() {
 				</h1>
 				<section>
 				<p>
-					Welcome to App Bucket, your one-stop shop for awesome apps crafted with passion and purpose. We're a
+					Welcome to App Bucket, your one-stop shop for awesome apps crafted with passion and purpose. We&apos;re a
 					platform built on the belief that amazing software can come from anywhere, not just big
 					corporations.
 				</p>
 				<p>
 					Think of us as a treasure chest overflowing with unique and useful apps created by talented junior
-					developers like you! Here, you'll find a diverse collection of free apps designed to help you tackle
+					developers like you! Here, you&apos;ll find a diverse collection of free apps designed to help you tackle
 					everyday tasks, spark your creativity, and maybe even discover something unexpected.
 				</p>
 				<p>
-					We're all about supporting the next generation of developers and giving them a platform to showcase
+					We&apos;re all about supporting the next generation of developers and giving them a platform to showcase
 					their incredible work. So, explore the bucket, download some apps, and maybe even get inspired to
 					create your own!
 				</p>
@@ -37,7 +37,7 @@ export default function About() {
 							software
 							creators.
 						</li>
-						<li><strong>Find Apps for Every Need:</strong> From productivity tools to fun games, we've got
+						<li><strong>Find Apps for Every Need:</strong> From productivity tools to fun games, we&apos;ve got
 							you
 							covered.
 						</li>
