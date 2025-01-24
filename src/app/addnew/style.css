@@ -1,0 +1,24 @@
+form {
+        border-radius: 1em;
+        font-size: 1.25rem;
+        width: clamp(200px, 80%, 800px);
+        margin-inline: auto;
+        border: 1px solid black;
+        padding: 0.5em 1em;
+}
+form div {
+        margin-block: 1em;
+}
+form div:not(:last-child) {
+        display: grid;       
+        grid-template-columns: 1fr 2fr;
+        align-items: center;
+        /*justify-content: stretch;*/
+}
+form div:last-child {
+        display: flex;
+        justify-content: center;
+}
+/* form * { */
+/*         outline: 1px solid red; */
+/* } */

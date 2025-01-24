@@ -1,6 +1,6 @@
 .card {
-	width: clamp(150px, 40%, 350px);
-	height: 250px;
+	width: clamp(250px, 40%, 350px);
+	height: 300px;
 
 	position: relative;
 	display: grid;

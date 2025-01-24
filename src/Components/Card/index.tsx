@@ -6,14 +6,14 @@ import Image from "next/image";
 interface props {
 	title: string;
 	url: string;
-	platfrom: "ANDROID" | "DESKTOP";
+	platform: "ANDROID" | "DESKTOP";
 }
 
-export default function Card({ title, url, platfrom }: props) {
+export default function Card({ title, url, platform }: props) {
 	return (
 		<div className={stl.card}>
 			<div className={stl.floatingOption}>
-				<strong className="text-xs">{platfrom}</strong>
+				<strong className="text-xs">{platform}</strong>
 			</div>
 			<div className={stl.cardUpper}>
 				<Image

@@ -1,6 +1,7 @@
 "use client";
 import { useRef } from "react";
 import "./header.css";
+import React from 'react';
 
 interface Props {
 	title?: string;
