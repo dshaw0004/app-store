@@ -27,30 +27,28 @@ const styles: { [key: string]: any } = {
         },
 };
 
-// TODO: clear the form after submit
+// TODO: clear the form after submit ✓
+// TODO: platform selector is not working ✓
 
 export default function AddNew() {
         const [formDisabled, setDisableForm] = useState(false);
         const [isPopUpOpen, setIsPopUpOpen] = useState<boolean>(false);
         const [message, setMessage] = useState<string>("");
-        const refName = useRef<HTMLInputElement>(null);
-        const refDesc = useRef<HTMLTextAreaElement>(null);
-        const refAppLink = useRef<HTMLInputElement>(null);
-        const refThumbLink = useRef<HTMLInputElement>(null);
-        const refPlatform = useRef<HTMLInputElement>(null);
-        const refVersion = useRef<HTMLInputElement>(null);
+        const [platform, setPlatform] = useState<'ANDROID' | 'WINDOWS' | 'LINUX'>('ANDROID');
 
 
-        function handleSubmit() {
+        function handleSubmit(e: FormEvent<HTMLFormElement>) {
                 setDisableForm(true);
                 setMessage("")
+                const formElement = e.currentTarget;
+                const form = new FormData(formElement);
                 const inputData = {
-                        name: refName.current?.value,
-                        description: refDesc.current?.value,
-                        appLink: refAppLink.current?.value,
-                        platform: refPlatform.current?.value,
-                        thumbnail: refThumbLink.current?.value,
-                        version: refVersion.current?.value,
+                        name: form.get('appname'),
+                        description: form.get('appdesc'),
+                        appLink: form.get('applink'),
+                        platform: platform,
+                        thumbnail: form.get('appthumbnail'),
+                        version: form.get('appversion')
                 };
                 console.log(inputData);
                 fetch("https://dshaw0004.onrender.com/addnewapp", {
@@ -65,7 +63,7 @@ export default function AddNew() {
                         // console.log(e);
                         setIsPopUpOpen(true);
                 });
-
+                formElement.reset();
                 setDisableForm(false);
         }
 
@@ -78,7 +76,7 @@ export default function AddNew() {
                         <form
                         onSubmit={(e: FormEvent<HTMLFormElement>) => {
                                 e.preventDefault();
-                                handleSubmit();
+                                handleSubmit(e);
                         }}
                         >
                                 <div>
@@ -88,7 +86,6 @@ export default function AddNew() {
                                                 type="text"
                                                 name="appname"
                                                 id="appname"
-                                                ref={refName}
                                                 className="border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5"
                                         />
                                 </div>
@@ -98,7 +95,6 @@ export default function AddNew() {
                                         <TextareaAutosize
                                         name="appdesc"
                                         id="appdesc"
-                                        ref={refDesc}
                                         maxRows={4}
                                         minRows={4}
                                         className=" border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5"
@@ -107,7 +103,7 @@ export default function AddNew() {
                                 </div>
                                 <div>
                                         <label htmlFor="applink">Link:</label>
-                                        <input type="url" name="applink" id="applink" ref={refAppLink} className=" border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5" />
+                                        <input type="url" name="applink" id="applink"  className=" border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5" />
                                 </div>
                                 <div>
                                         <label htmlFor="appthumbnail">Thumbnail:</label>
@@ -115,7 +111,6 @@ export default function AddNew() {
                                         type="url"
                                         name="appthumbnail"
                                         className=" border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5"
-                                        ref={refThumbLink}
                                         id="appthumbnail"
                                         />
                                 </div>
@@ -124,9 +119,9 @@ export default function AddNew() {
                                         <Select
                                         labelId="appplatform"
                                         id="appplatform"
-                                        value={"ANDROID"}
+                                        value={platform}
                                         label="appplatform"
-                                        inputRef={refPlatform}
+                                        onChange={(e: SelectChangeEvent) => {setPlatform(e.target.value as string)}}
                                         >
                                         <MenuItem value={"ANDROID"}>Android</MenuItem>
                                         <MenuItem value={"LINUX"}>Linux</MenuItem>
@@ -139,7 +134,6 @@ export default function AddNew() {
                                         type="text"
                                         name="appversion"
                                         id="appversion"
-                                        ref={refVersion}
                                         className=" border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5"
                                         />
                                 </div>
