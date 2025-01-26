@@ -27,6 +27,12 @@ const styles: { [key: string]: any } = {
         },
 };
 
+enum PlatformTypes{
+        Android = 'ANDROID',
+        Windows = "WINDOWS",
+        Linux = "LINUX"
+}
+
 // TODO: clear the form after submit ✓
 // TODO: platform selector is not working ✓
 
@@ -34,7 +40,7 @@ export default function AddNew() {
         const [formDisabled, setDisableForm] = useState(false);
         const [isPopUpOpen, setIsPopUpOpen] = useState<boolean>(false);
         const [message, setMessage] = useState<string>("");
-        const [platform, setPlatform] = useState<'ANDROID' | 'WINDOWS' | 'LINUX'>('ANDROID');
+        const [platform, setPlatform] = useState<PlatformTypes>(PlatformTypes.Android);
 
 
         function handleSubmit(e: FormEvent<HTMLFormElement>) {
@@ -121,7 +127,7 @@ export default function AddNew() {
                                         id="appplatform"
                                         value={platform}
                                         label="appplatform"
-                                        onChange={(e: SelectChangeEvent) => {setPlatform(e.target.value as string)}}
+                                        onChange={(e: SelectChangeEvent) => {setPlatform(e.target.value as PlatformTypes)}}
                                         >
                                         <MenuItem value={"ANDROID"}>Android</MenuItem>
                                         <MenuItem value={"LINUX"}>Linux</MenuItem>
