@@ -3,12 +3,12 @@ import Header from "@/Components/Header";
 import DialogPopUp from "@/Components/DialogPopUp";
 import {
         TextField,
-        Select,
         MenuItem,
         Button,
         TextareaAutosize,
         Input
 } from "@mui/material";
+import Select, {SelectChangeEvent} from '@mui/material/Select';
 import { FormEvent, useState, useRef } from "react";
 import './style.css';
 
