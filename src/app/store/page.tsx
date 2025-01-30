@@ -20,25 +20,24 @@ export default function Store() {
 						title="Dev Community"
 						url="https://github.com/dshaw0004/dev-community/releases/download/v0.0.1/dev-community-beta.apk"
 						platform="ANDROID"
-						image={'https://raw.githubusercontent.com/dshaw0004/dev-community/main/assets/images/icon.png'}
+						image={'/dev-community.png'}
 					/>
 					<Card
 						title="Imagic"
 						url="https://firebasestorage.googleapis.com/v0/b/pythons-apps-by-ds.appspot.com/o/Imagic%20(v1.2.0stable).exe?alt=media&token=9c52ac6d-b988-4588-b242-25ec289b06c4"
 						platform="DESKTOP"
-						image={'https://raw.githubusercontent.com/dshaw0004/imagic/main/Assets/Imagic.png'}
+						image={'/imagic.png'}
 					/>
 					<Card
 						title="codeQRcreator"
 						url="https://firebasestorage.googleapis.com/v0/b/pythons-apps-by-ds.appspot.com/o/codeQRcreator_v1.0.0.exe?alt=media&token=97b0c2b1-1d2b-41b9-9130-6a57f880b39f"
 						platform="DESKTOP"
-						image={'https://raw.githubusercontent.com/dshaw0004/codeQRcreator-app/main/assets/codeQRcreator-icon.png'}
+						image={'/codeQRcreator.png'}
 					/>
 					<Card
 						title="Dictionary"
 						url="https://firebasestorage.googleapis.com/v0/b/pythons-apps-by-ds.appspot.com/o/Dictionary.apk?alt=media&token=624c3f9e-e32d-422f-a1af-cdc0f028a38f"
 						platform="ANDROID"
-						image={'https://raw.githubusercontent.com/dshaw0004/freeDictionary/master/icons/Dictionary-icon(128x128).png'}
 					/>
 
 					<Card
