@@ -7,9 +7,10 @@ interface props {
 	title: string;
 	url: string;
 	platform: "ANDROID" | "DESKTOP";
+	image?: string;
 }
 
-export default function Card({ title, url, platform }: props) {
+export default function Card({ title, url, platform, image }: props) {
 	return (
 		<div className={stl.card}>
 			<div className={stl.floatingOption}>
@@ -17,10 +18,11 @@ export default function Card({ title, url, platform }: props) {
 			</div>
 			<div className={stl.cardUpper}>
 				<Image
-					src="/appbucket.png"
+					src={!!image ? image : "/appbucket.png"}
 					alt={`${title} app logo`}
 					width={100}
 					height={100}
+
 				/>
 			</div>
 			<div className={stl.cardBottom}>
