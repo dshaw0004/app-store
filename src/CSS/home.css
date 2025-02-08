@@ -17,6 +17,9 @@
 
 .homepage-title {
 	text-align: center;
+  text-shadow: 2px 2px 0 white, 4px 4px 0 blue;
+  /* text-shadow: 2px 2px 0 white, -2px -2px 0 blue; */
+
 }
 
 .homepage-gotostore-btn {
@@ -26,6 +29,13 @@
 	color: rgb(34 34 43);
 	display: block;
 	margin-inline: auto;
+}
+.homepage-gotostore-btn:hover,
+.homepage-gotostore-btn:focus-within,
+.homepage-gotostore-btn:focus-visible {
+        transform: scale(1.05);
+        color: darkblue;
+        background-color: rgba(0, 125, 125, 0.25);
 }
 .homepage-gotostore-btn > a {
 	color: inherit;
@@ -39,4 +49,51 @@
 	color: inherit;
 	font-size: inherit;
 	width: 3ch;
+}
+.homepage{
+        min-height: 100vh;
+        min-height: 100dvh;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+}
+footer{
+        font-size: larger;
+        padding-block: 0.5em;
+        text-align: center;
+        background-color: rgba(0, 0, 255, 0.15);
+        background-image: linear-gradient(
+        white 16%,
+        rgba(0, 0, 255, 0.15)
+        );
+}
+footer hr {
+        border-top: 2px dashed black;
+        width: 250px;
+        margin-inline: auto;
+}
+footer .extra-links {
+        font-size: medium;
+        /* display: flex; */
+        /* gap: 1em; */
+        /* justify-content: center; */
+}
+footer .extra-links a{
+        position: relative;
+}
+footer .extra-links a::after {
+        content: '';
+        position: absolute;
+        background-color: blue;
+        height: 2px;
+        bottom: 0;
+        left: 0;
+        transition: transform 1s ease-in-out;
+        transform-origin: center;
+        transform: scale(0);
+}
+footer .extra-links a:hover::after {
+        transition: transform 1s ease-in-out;
+        transform: scaleX(1);
+        bottom: 0;
 }

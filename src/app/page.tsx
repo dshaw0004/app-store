@@ -38,7 +38,7 @@ function CartIcon() {
 
 export default function Home() {
 	return (
-		<>
+		<div className="homepage">
 			<Header title="App Bucket" />
 			<main>
 				<div className="homepage-logo-container">
@@ -69,6 +69,19 @@ export default function Home() {
 					</a>
 				</button>
 			</main>
-		</>
+      <footer>
+        <p>
+        made with &#x2764; by <a href="https://github.com/dshaw0004">dshaw0004</a>
+        </p>
+        <hr />
+        <div className="extra-links">
+            <a href="/login">Log In</a>
+            <span>&emsp;|&emsp;</span>
+            <a href="/report">Report An Issue</a>
+            <span>&emsp;|&emsp;</span>
+            <a href="https://github.com/dshaw0004/app-store.git">Contribute</a>
+        </div>
+      </footer>
+		</div>
 	);
 }
