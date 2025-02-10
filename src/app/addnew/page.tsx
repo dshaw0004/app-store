@@ -34,7 +34,7 @@ enum PlatformTypes{
 }
 
 // TODO: clear the form after submit ✓
-// TODO: platform selector is not working ✓
+// TODO: platform selector is not working 
 
 export default function AddNew() {
         const [formDisabled, setDisableForm] = useState(false);
@@ -57,7 +57,8 @@ export default function AddNew() {
                         version: form.get('appversion')
                 };
                 console.log(inputData);
-                fetch("https://dshaw0004.onrender.com/addnewapp", {
+                fetch("https://dshaw0004.pythonanywhere.com/apps", {
+                // fetch("http://localhost:5000/addnewapp", {
                         method: "POST",
                         headers: {
                                 "Content-Type": "application/json",
