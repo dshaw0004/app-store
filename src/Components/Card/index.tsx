@@ -2,11 +2,16 @@ import gbl from "@/app/Global.module.css";
 import stl from "./index.module.css";
 
 import Image from "next/image";
+enum AppPlatform {
+    'ANDROID',
+    'WINDOWS',
+    'LINUX'
+}
 
 interface props {
 	title: string;
 	url: string;
-	platform: "ANDROID" | "DESKTOP";
+	platform: AppPlatform;
 	image?: string;
 }
 

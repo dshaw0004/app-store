@@ -3,25 +3,74 @@ import Card from "@/Components/Card";
 import Header from "@/Components/Header";
 import { useEffect, useState } from "react";
 import stl from "./index.module.css";
+// import {Skeleton, Stack} from '@mui/material';
+import Stack from '@mui/material/Stack';
+import Skeleton from '@mui/material/Skeleton';
+
 
 interface data {
 	appURL: string;
 	description: string;
 	name: string;
 }
+enum AppPlatform {
+    'ANDROID',
+    'WINDOWS',
+    'LINUX'
+}
+type AppInfoType = {
+    platform: AppPlatform;
+    download_link: string;
+    description: string;
+    thumbnail: string;
+    version: string;
+    app_id: string;
+    author: string;
+    name: string;
+}
 
 export default function Store() {
+  const [apps, setApps] = useState<Array<AppInfoType>>([]);
+  useEffect(()=> {
+      (async function(){
+          const res = await fetch("https://dshaw0004.pythonanywhere.com/apps");
+          if(!res.ok){
+              throw "can not get response from the server";
+          }
+          const data = await res.json();
+          setApps(data as AppInfoType[]);
+      })()
+  }, [])
 	return (
 		<>
 			<Header />
 			<main>
 				<div className={stl.cardContainer}>
+        {apps.length > 0 ? apps.map(app => (
 					<Card
-						title="Dev Community"
-						url="https://github.com/dshaw0004/dev-community/releases/download/v0.0.1/dev-community-beta.apk"
-						platform="ANDROID"
-						image={'/dev-community.png'}
+            key={app.app_id}
+						title={app.name}
+						url={app.download_link}
+						platform={app.platform}
+						image={app.thumbnail}
 					/>
+        )): (
+        <>
+        {Array(12).fill(1).map((_, index) => (
+                <Stack key={index} spacing={0.5}>
+                        <Skeleton variant="rectangular" animation="wave" width={250} height={230} />
+                        <Skeleton variant="rounded" animation="wave" width={250} height={65} />
+                </Stack>
+        ))}
+        </>
+        )}
+				</div>
+			</main>
+		</>
+	);
+}
+
+/*
 					<Card
 						title="Imagic"
 						url="https://firebasestorage.googleapis.com/v0/b/pythons-apps-by-ds.appspot.com/o/Imagic%20(v1.2.0stable).exe?alt=media&token=9c52ac6d-b988-4588-b242-25ec289b06c4"
@@ -55,8 +104,5 @@ export default function Store() {
 						url="https://firebasestorage.googleapis.com/v0/b/pythons-apps-by-ds.appspot.com/o/PySpammer.exe?alt=media&token=db15f8c7-4099-4838-9c3f-de8984249d50"
 						platform="DESKTOP"
 					/>
-				</div>
-			</main>
-		</>
-	);
-}
+ *
+ */

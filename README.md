@@ -1,36 +1,20 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# App Bucket
 
-## Getting Started
+Welcome to App Bucket, your one-stop shop for awesome apps crafted with passion and purpose. We're a platform built on the belief that amazing software can come from anywhere, not just big corporations.
 
-First, run the development server:
+Think of us as a treasure chest overflowing with unique and useful apps created by talented junior developers like you! Here, you'll find a diverse collection of free apps designed to help you tackle everyday tasks, spark your creativity, and maybe even discover something unexpected.
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+We're all about supporting the next generation of developers and giving them a platform to showcase their incredible work. So, explore the bucket, download some apps, and maybe even get inspired to create your own!
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## Key Features:
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+- Unique & Free: Discover a treasure trove of free apps created by passionate developers.
+- Support Independent Developers: Help us empower the next generation of software creators.
+- Find Apps for Every Need: From productivity tools to fun games, we've got you covered.
+- A Community of Creators: Join a vibrant community of developers and app enthusiasts.
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+## How to submit your app to App Bucket ?
 
-## Learn More
+This is still under development. You will be able to upload you apps once it hit the version 1.0.0 stable.
 
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+For now you can contact me to show you interest toward this platform.
