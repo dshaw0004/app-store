@@ -1,5 +1,6 @@
 import gbl from "@/app/Global.module.css";
 import stl from "./index.module.css";
+import {redirect} from 'next/navigation';
 
 import Image from "next/image";
 enum AppPlatform {
@@ -9,13 +10,14 @@ enum AppPlatform {
 }
 
 interface props {
+  app_id: string;
 	title: string;
 	url: string;
 	platform: AppPlatform;
 	image?: string;
 }
 
-export default function Card({ title, url, platform, image }: props) {
+export default function Card({ app_id, title, url, platform, image }: props) {
 	return (
 		<div className={stl.card}>
 			<div className={stl.floatingOption}>
@@ -33,7 +35,7 @@ export default function Card({ title, url, platform, image }: props) {
 			<div className={stl.cardBottom}>
 				<h4 className="">{title}</h4>
 				<a
-					href={url}
+					href={`/application/${app_id}`}
 					// to={`/download/${props.title}`}
 					// state={{ title: props.title, url: props.url, fromCard: true }}
 					className={gbl.btn}

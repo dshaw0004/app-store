@@ -3,7 +3,7 @@ import Card from "@/Components/Card";
 import Header from "@/Components/Header";
 import { useEffect, useState } from "react";
 import stl from "./index.module.css";
-// import {Skeleton, Stack} from '@mui/material';
+import Link from "next/link";
 import Stack from '@mui/material/Stack';
 import Skeleton from '@mui/material/Skeleton';
 
@@ -47,8 +47,9 @@ export default function Store() {
 			<main>
 				<div className={stl.cardContainer}>
         {apps.length > 0 ? apps.map(app => (
-					<Card
-            key={app.app_id}
+ 					<Card
+          key={app.app_id}
+          app_id={app.app_id}
 						title={app.name}
 						url={app.download_link}
 						platform={app.platform}
