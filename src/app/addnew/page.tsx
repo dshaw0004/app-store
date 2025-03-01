@@ -49,12 +49,12 @@ export default function AddNew() {
                 const formElement = e.currentTarget;
                 const form = new FormData(formElement);
                 const inputData = {
-                        name: form.get('appname'),
-                        description: form.get('appdesc'),
-                        appLink: form.get('applink'),
-                        platform: platform,
-                        thumbnail: form.get('appthumbnail'),
-                        version: form.get('appversion')
+                        name: form.get('appname') || null,
+                        description: form.get('appdesc') || null,
+                        appLink: form.get('applink') || null,
+                        platform: platform || null,
+                        thumbnail: form.get('appthumbnail') || null,
+                        version: form.get('appversion') || null
                 };
                 console.log(inputData);
                 fetch("https://dshaw0004.pythonanywhere.com/apps", {

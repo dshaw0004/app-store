@@ -49,7 +49,7 @@ export default function About() {
 				<section>
 					<h2 className={"font-bold"}>How to submit your app to App Bucket ?</h2>
 					<br/>
-					<p>This is still under development. You will be able to upload you apps once it hit the version 1.0.0 stable.
+					<p>This is still under development.
 					</p>
 					<p>For now you can <a href={'https://github.com/dshaw0004'}>contact me</a> to show you interest toward this platform.</p>
 				</section>

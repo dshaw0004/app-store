@@ -2,6 +2,7 @@
 import { useRef } from "react";
 import "./header.css";
 import React from 'react';
+import HamMenu from '@/Components/Icons/HamMenu'
 
 interface Props {
 	title?: string;
@@ -30,7 +31,7 @@ const Header: React.FunctionComponent<{
 						className="small-screen-only"
 						onClick={toggleNavbar}
 					>
-						<b>=</b>
+						<HamMenu/>
 					</button>
 					<ul className="nav-list" ref={navUlRef}>
 						<li className="nav-item">

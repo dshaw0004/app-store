@@ -46,25 +46,25 @@ export default function Store() {
 			<Header />
 			<main>
 				<div className={stl.cardContainer}>
-        {apps.length > 0 ? apps.map(app => (
- 					<Card
-          key={app.app_id}
-          app_id={app.app_id}
+				{apps.length > 0 ? apps.map(app => (
+					<Card
+						key={app.app_id}
+						app_id={app.app_id}
 						title={app.name}
 						url={app.download_link}
 						platform={app.platform}
 						image={app.thumbnail}
 					/>
-        )): (
-        <>
-        {Array(12).fill(1).map((_, index) => (
-                <Stack key={index} spacing={0.5}>
-                        <Skeleton variant="rectangular" animation="wave" width={250} height={230} />
-                        <Skeleton variant="rounded" animation="wave" width={250} height={65} />
-                </Stack>
-        ))}
-        </>
-        )}
+				)): (
+				<>
+				{Array(12).fill(1).map((_, index) => (
+					<Stack key={index} spacing={0.5}>
+						<Skeleton variant="rectangular" animation="wave" width={250} height={230} />
+						<Skeleton variant="rounded" animation="wave" width={250} height={65} />
+					</Stack>
+				))}
+				</>
+				)}
 				</div>
 			</main>
 		</>
